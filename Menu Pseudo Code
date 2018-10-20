@@ -1,0 +1,39 @@
+Pseudo Code for Menu             ; the functionality of the menu would likely be a UI to call modules for configuration
+                                 ; or debugging purposes
+********************
+
+Start
+  Print "Select an option from the menu"
+  Print "***********************"
+  Print "Set controller options" ; move to controller module if selected which would
+                                 ; prompt us to select a control option to control the RC car
+                                 ; once selected, we return to the menu and save the default controller
+                                 ; if not selected, default control would be set to ps3 controller
+ 
+  Print "Set PWM"                ; move to PWM controller module which controls and sends pulse
+                                 ; to the RC car to tell it to go forward or backward and how fast
+                                 ; this module would have a test module within it which allows us to
+                                 ; calibrate the steering and throttle which uses the
+                                 ; pwm value of 0-1000 so that we can find neutral pwm value, reverse, and forward
+                                 ; if not selected, default PWM values will be read from config.py file
+  
+  Print "View Camera's"          ; move to camera module which would allow us to display what the RC car is seeing
+                                 ; future implementation would also display a window that masks over objects
+                                 ; another implementation would be LOAM: Lidar Odometry and Mapping in Real-time
+                                 ; this feature would allow us to generate a map and detect object and mask those object
+                                 ; the goal of this is to detect object, mask these objects, and plan a route accordingly
+                                 ; if not selected, will not open a window that shows a real-time display of the camera/lidar
+                                 ; until program execution
+                                 
+  Print "Run"                    ; execute program
+                                 ; executing program will use the variable from config.py and the value that those variable
+                                 ; contains, after reading config.py file, open up camera in a window, lidar real-time mapping
+                                 ; will be an optional window that would require an additional call to open it,
+                                 ; car will now initiliaze and start self driving car mode.
+                                 
+  Print "Train"                  ; train the car on a track with keras and use the data set gathered from the camera to
+                                 ; train a model, while in the training module, we also have the option to delete bad data
+                                 ; in the scenario that when we train the car and make an error, send the data back to PC
+                                 ; and train the model through there
+                                 
+                                 
